@@ -14,7 +14,7 @@
     * Open a private window in your browser. Copy and paste the link to your pull request into the address bar. Make sure you can see your pull request properly. This helps the technical facilitator and learning support staff review your submission easily.
 
 Checklist:
-- [ ] Create a branch called `assignment-two`.
+- [x] Create a branch called `assignment-two`.
 - [ ] Ensure that the repository is public.
 - [ ] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
 - [ ] Verify that the link is accessible in a private browser window.
@@ -54,7 +54,25 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+1. Type 1: Overwrite Changes
+
+In a Type 1 approach, the CustomerAddress table will store only the latest address for each customer.
+When a customer moves, the existing address information is overwritten with the new address details.
+
+**Key Characteristics:**
+- No historical tracking.
+- Only the current address is stored.
+- Simpler design and lower storage requirements.
+
+Type 2: Retain Historical Changes
+
+In a Type 2 approach, the CustomerAddress table will keep all historical changes by creating a new row for each address change.
+Each record includes validity dates to track when the address was active.
+
+**Key Characteristics:**
+- Full historical tracking of address changes.
+- New record inserted for every new address.
+- Supports historical reporting and auditing.
 ```
 
 ***
